@@ -21,7 +21,16 @@ public class RSA {
         }
         System.out.println("The GCD is " + gcd);
         System.out.printf("x = %d, y = %d\n", x.get(), y.get());
-        System.out.println("d = " + (phi + y.get()));
+        if (e < phi){
+            System.out.println("d = " + (phi + y.get()));
+        }
+        else{
+            int d = y.get();
+            while(d > phi){
+                d = d - phi;
+            }
+            System.out.println("d = " + d);
+        }
 
     }
 
